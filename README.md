@@ -2,7 +2,7 @@
 
 **The Ultimate All-in-One OSCP Study & Reference Platform**
 
-## 🗺️ **[>> PROFESSIONAL PENETRATION TESTING CYBER KILL CHAIN <<](https://cdn.jsdelivr.net/gh/digitalcomposer/oscp-pen200-prep@main/professional-pentest-kill-chain.html)**
+## 🗺️ **[>> PROFESSIONAL PENETRATION TESTING CYBER KILL CHAIN <<](https://htmlpreview.github.io/?https://github.com/digitalcomposer/oscp-pen200-prep/blob/main/professional-pentest-kill-chain.html)**
 
 **Interactive framework for real-world penetration testing**
 - 7 main phases: Reconnaissance → Lateral Movement
@@ -21,7 +21,7 @@
 - **Multi-vector attacks** - Web, Network, Social Engineering, Cloud
 - **Click for details** - Commands, tools, risk ratings, techniques
 - **Works offline** - Download & open in any browser
-- **[>>> LAUNCH KILL CHAIN <<<](https://cdn.jsdelivr.net/gh/digitalcomposer/oscp-pen200-prep@main/professional-pentest-kill-chain.html)**
+- **[>>> LAUNCH KILL CHAIN <<<](https://htmlpreview.github.io/?https://github.com/digitalcomposer/oscp-pen200-prep/blob/main/professional-pentest-kill-chain.html)**
 
 ### ✅ Phase 1: Obsidian Vault (Complete!)
 - **31 beautifully formatted markdown notes**
