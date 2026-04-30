@@ -32,6 +32,7 @@ last-updated: 2025-04-30
 ## 📚 Study Modules (Click to Navigate)
 
 ### Foundation & Methodology
+- [[01-Methodology/Professional-Pentest-Kill-Chain|⚔️ Professional Pentest Kill Chain]] — Complete cyber kill chain with Mermaid diagrams (START HERE!)
 - [[01-Methodology/Pentest-Methodology|🗺️ Pentest Methodology]] — Complete attack chain with flowcharts
 - [[01-Methodology/Recon-and-Enumeration|🔍 Recon & Enumeration]] — Information gathering playbook
 - [[01-Methodology/Port-Service-Checklist|🔌 Port Service Checklist]] — Service-by-service exploitation guide
