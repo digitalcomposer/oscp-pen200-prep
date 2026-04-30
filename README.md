@@ -2,35 +2,26 @@
 
 **The Ultimate All-in-One OSCP Study & Reference Platform**
 
-## 🗺️ **INTERACTIVE CYBER KILL CHAINS**
+## 🗺️ **[>> PROFESSIONAL PENETRATION TESTING CYBER KILL CHAIN <<](https://cdn.jsdelivr.net/gh/digitalcomposer/oscp-pen200-prep@main/professional-pentest-kill-chain.html)**
 
-### [>> PROFESSIONAL PENETRATION TESTING KILL CHAIN <<](https://cdn.jsdelivr.net/gh/digitalcomposer/oscp-pen200-prep@main/professional-pentest-kill-chain.html)
-**General-purpose framework for real-world penetration testing**
+**Interactive framework for real-world penetration testing**
 - 7 main phases: Reconnaissance → Lateral Movement
 - 30+ attack nodes covering all engagement types
 - Multi-vector attacks (web, network, social, cloud)
 - Risk ratings and detailed techniques per node
-- Professional methodology for legitimate assessments
-
-### [>> OSCP EXAM CYBER KILL CHAIN <<](https://cdn.jsdelivr.net/gh/digitalcomposer/oscp-pen200-prep@main/cyber-kill-chain-interactive.html)
-**OSCP PEN-200 specific attack flow optimization**
-- 40+ nodes focused on exam machine exploitation
-- Timing budgets and phase breakdowns
-- Decision trees for preventing common failures
-- Command examples with copy-to-clipboard
-- 50% enumeration rule enforcement
+- Complete methodology from initial access to covering tracks
 
 ---
 
 ## 📦 What You Get
 
-### ✅ Interactive Cyber Kill Chain Maps (2 Versions)
-- **Professional Pentest Version** - 7 phases, 30+ nodes for real-world engagements
-- **OSCP Exam Version** - 40+ nodes optimized for certification exam
-- **Visual attack flows** with multiple exploitation paths
+### ✅ Interactive Professional Penetration Testing Kill Chain
+- **7 main phases** - Complete attack methodology
+- **30+ attack nodes** covering real-world engagement scenarios
+- **Multi-vector attacks** - Web, Network, Social Engineering, Cloud
 - **Click for details** - Commands, tools, risk ratings, techniques
 - **Works offline** - Download & open in any browser
-- **[>>> PROFESSIONAL KILL CHAIN <<<](https://cdn.jsdelivr.net/gh/digitalcomposer/oscp-pen200-prep@main/professional-pentest-kill-chain.html)** | **[>>> OSCP KILL CHAIN <<<](https://cdn.jsdelivr.net/gh/digitalcomposer/oscp-pen200-prep@main/cyber-kill-chain-interactive.html)**
+- **[>>> LAUNCH KILL CHAIN <<<](https://cdn.jsdelivr.net/gh/digitalcomposer/oscp-pen200-prep@main/professional-pentest-kill-chain.html)**
 
 ### ✅ Phase 1: Obsidian Vault (Complete!)
 - **31 beautifully formatted markdown notes**
