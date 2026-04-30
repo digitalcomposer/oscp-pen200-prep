@@ -7,23 +7,16 @@
 ## 📦 What You Get
 
 ### ✅ Phase 1: Obsidian Vault (Complete!)
-- **18 beautifully formatted markdown notes**
+- **31 beautifully formatted markdown notes**
 - **Cross-linked wiki structure**
 - **Mermaid diagrams & flowcharts**
 - **Copy-paste ready commands**
 - **Offline-ready**: Works completely offline after initial setup
 
-### ✅ Phase 2: Python Research Scraper
-- Automatic content aggregation from:
-  - GitHub (OSCP repos)
-  - HackTricks
-  - PayloadsAllTheThings
-  - Exploit-DB
-
-### ✅ Phase 3: Python Research Scrapers
-- **GitHub harvester** - Tracks new OSCP repos, CVEs, tools
-- **Reddit monitor** - Community feedback & success patterns
-- **Automated updates** - Weekly/monthly research integration
+### ✅ Phase 2: Python Research Scrapers
+- **GitHub harvester** - Tracks new OSCP repos, CVEs, tools (weekly)
+- **Reddit monitor** - Community feedback & success patterns (monthly)
+- **Automated updates** - AI agent infrastructure for continuous improvement
 
 ---
 
