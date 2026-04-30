@@ -97,56 +97,10 @@ python3 scraper.py
 ```
 
 **This automatically:**
-- Searches GitHub for latest OSCP repos
-- Fetches HackTricks sections
-- Scrapes PayloadsAllTheThings
-- Generates markdown files
-- Saves `resources.json` for dashboard
-
----
-
-## 📊 Using the Dashboard
-
-### Open in Browser
-
-```bash
-# Simple HTTP server
-python3 -m http.server 8000
-
-# Then visit:
-http://localhost:8000/index.html
-```
-
-### Features
-
-**🎯 Vulnerabilities Tab**
-- Searchable vulnerability database
-- Severity ratings (Critical/High/Medium/Low)
-- Attack vectors and mitigations
-
-**🗺️ Methodology Tab**
-- Complete 7-phase exploitation workflow
-- Copy-paste ready nmap commands
-- Phase breakdown with timing
-
-**💀 Payloads Tab**
-- Bash, Python, PHP, PowerShell, Netcat, etc.
-- All copy-paste ready
-- Listener setup instructions
-
-**🛠️ Tools Tab**
-- Essential tools by category
-- Tool descriptions and use cases
-
-**📈 Progress Tab**
-- Study checklists for each topic
-- Progress bars (auto-calculate from checkboxes)
-- Machine practice counter
-
-**⏱️ Exam Timer**
-- 23 hours 45 minutes countdown
-- Click START to begin
-- Auto-colors red when < 1 hour remaining
+- Searches GitHub for latest OSCP repos and CVEs
+- Monitors Reddit for community success patterns
+- Tracks tool updates (linPEAS, winPEAS, Chisel, etc.)
+- Generates markdown findings integrated into vault
 
 ---
 
@@ -154,15 +108,21 @@ http://localhost:8000/index.html
 
 | Module | Notes | Focus |
 |--------|-------|-------|
-| **Methodology** | 3 | Attack framework, port enumeration |
-| **Linux** | 3 | Privesc vectors, shells, file transfer |
-| **Windows** | 3 | Token abuse, AD attacks, services |
-| **Web** | 5 | OWASP Top 10, SQLi, upload bypass |
+| **Methodology** | 4 | 7-phase attack framework, enumeration strategy |
+| **Linux** | 4 | 8 privesc vectors, post-exploitation, shells |
+| **Windows** | 3 | Token abuse, AD attacks, service exploitation |
+| **Web** | 5 | OWASP Top 10, SQLi, upload bypass, command injection |
 | **Tools** | 5 | Nmap, MSFvenom, shells, pivoting, wordlists |
 | **Buffer Overflow** | 1 | 7-step x86 Windows BOF methodology |
+| **Advanced** | 1 | Advanced exploitation techniques |
+| **Exam Strategy** | 4 | Common mistakes, scenarios, checklist, template |
+| **Decision Trees** | 1 | Vulnerability prioritization framework |
+| **Progress Tracking** | 1 | Self-assessment & weakness analyzer |
+| **Mock Exams** | 1 | Full 23h 45m exam simulation |
+| **Community Research** | 2 | GitHub findings + Reddit insights |
 | **Resources** | 2 | Machine lists, useful links |
 
-**Total: 18 comprehensive, exam-ready notes**
+**Total: 31 comprehensive, community-validated, exam-ready notes**
 
 ---
 
@@ -226,15 +186,6 @@ http://localhost:8000/index.html
 
 ---
 
-## 📊 Dashboard Keyboard Shortcuts
-
-- **Alt+1** → Vulnerabilities tab
-- **Alt+2** → Methodology tab
-- **Alt+3** → Payloads tab
-- **Ctrl+C** → Copy commands (after clicking Copy button)
-
----
-
 ## 🔒 Offline Usage
 
 **Everything works offline after setup:**
@@ -253,13 +204,27 @@ http://localhost:8000/index.html
 ```
 oscpmaster/
 ├── setup.sh                     ← Create vault
-├── scraper.py                   ← Fetch latest content
+├── advanced_scraper.py          ← GitHub research harvester
+├── reddit_scraper.py            ← Community feedback monitor
 ├── requirements.txt             ← Python dependencies
-├── index.html                   ← Dashboard
-├── OSCP-PEN200-Vault/           ← Complete vault (created by setup.sh)
-│   ├── 18 markdown files
-│   └── .obsidian/
-└── README.md                    ← This file
+├── OSCP-PEN200-Vault/           ← Complete vault (31 markdown notes)
+│   ├── 00-Dashboard.md          ← Map of Content (MOC)
+│   ├── 01-Methodology/          ← 7-phase attack framework
+│   ├── 02-Linux/                ← 8 privilege escalation vectors
+│   ├── 03-Windows/              ← Token abuse, AD, services
+│   ├── 04-Web/                  ← OWASP Top 10 vulnerabilities
+│   ├── 05-Tools/                ← Nmap, MSFvenom, shells, pivoting
+│   ├── 06-Buffer-Overflow/      ← x86 Windows BOF methodology
+│   ├── 07-Resources/            ← Machine lists, useful links
+│   ├── 08-Exam-Strategy/        ← Mistakes prevention, checklist
+│   ├── 09-Exam-Day/             ← Hour-by-hour timeline
+│   ├── 10-Decision-Trees/       ← Vulnerability prioritization
+│   ├── 11-Progress-Tracking/    ← Self-assessment tools
+│   ├── 12-Mock-Exams/           ← 23h 45m simulation
+│   ├── 13-Latest-Research/      ← GitHub + Reddit findings
+│   └── .obsidian/               ← Graph view config
+├── README.md                    ← This file
+└── AI-AGENT-INFRASTRUCTURE.md   ← Future automation setup
 ```
 
 ---
