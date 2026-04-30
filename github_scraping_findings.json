@@ -1,0 +1,702 @@
+{
+  "new_repos": [
+    {
+      "name": "PWK-OSCP-Preparation-Roadmap",
+      "url": "https://github.com/security-prince/PWK-OSCP-Preparation-Roadmap",
+      "stars": 392,
+      "description": "Roadmap for preparing for OSCP, anyone is free to use this, and also feedback and contributions are welcome",
+      "language": null,
+      "updated": "2026-04-15T15:41:28Z",
+      "topics": [
+        "attack-vectors",
+        "enumeration",
+        "offensive-security",
+        "oscp",
+        "oscp-bible",
+        "oscp-guide",
+        "oscp-notes",
+        "oscp-prep",
+        "oscp-tools",
+        "pen-200",
+        "pwk-oscp"
+      ]
+    },
+    {
+      "name": "oscp-cheatsheet",
+      "url": "https://github.com/fatalxs/oscp-cheatsheet",
+      "stars": 44,
+      "description": "A cheatsheet I made while taking OSCP+/PEN-200 in 2024-2025",
+      "language": null,
+      "updated": "2026-04-28T20:37:52Z",
+      "topics": []
+    },
+    {
+      "name": "ssh-default-banners",
+      "url": "https://github.com/richlamdev/ssh-default-banners",
+      "stars": 34,
+      "description": "Nmap NSE script to identify Debian, Ubuntu, FreeBSD version based on default SSH banner response.  Intended for Penentration Testing, OSCP (PEN-200), HackTheBox (HTB), TryHackMe, RootMe ",
+      "language": "Lua",
+      "updated": "2026-04-24T05:52:44Z",
+      "topics": [
+        "banner-grabbing",
+        "debian",
+        "enumeration",
+        "ethical-hacking",
+        "freebsd",
+        "hacking",
+        "htb",
+        "lua",
+        "network-analysis",
+        "nmap",
+        "nse-script",
+        "openssh",
+        "openssh-server",
+        "oscp",
+        "penetration-testing",
+        "raspberry-pi",
+        "ssh",
+        "ssh-banner",
+        "ssh-server",
+        "ubuntu"
+      ]
+    },
+    {
+      "name": "OffSec-PEN-200-OSCP-Preparation",
+      "url": "https://github.com/r1skkam/OffSec-PEN-200-OSCP-Preparation",
+      "stars": 2,
+      "description": "21082023Mon",
+      "language": "PowerShell",
+      "updated": "2025-08-18T15:58:22Z",
+      "topics": []
+    },
+    {
+      "name": "oscp-pg-practice-writeups",
+      "url": "https://github.com/randalltr/oscp-pg-practice-writeups",
+      "stars": 1,
+      "description": "OSCP / PEN-200 study notes \u2014 PG Practice machine pentest reports, step-by-step writeups, and privilege escalation examples.",
+      "language": null,
+      "updated": "2026-04-17T03:22:27Z",
+      "topics": []
+    },
+    {
+      "name": "Massive-Web-Application-Penetration-Testing-Bug-Bounty-Notes",
+      "url": "https://github.com/xalgord/Massive-Web-Application-Penetration-Testing-Bug-Bounty-Notes",
+      "stars": 1801,
+      "description": "A comprehensive guide for web application penetration testing and bug bounty hunting, covering methodologies, tools, and resources for identifying and exploiting vulnerabilities.",
+      "language": null,
+      "updated": "2026-04-30T17:21:13Z",
+      "topics": [
+        "bug-bounty",
+        "bugbounty",
+        "bugbountytips",
+        "collection",
+        "ethical-hacking",
+        "hacking",
+        "owasp",
+        "owasp-top-10",
+        "resources",
+        "xalgord"
+      ]
+    },
+    {
+      "name": "Windows-Penetration-Testing",
+      "url": "https://github.com/JFR-C/Windows-Penetration-Testing",
+      "stars": 310,
+      "description": "Technical notes, AD pentest methodology, list of tools, scripts and Windows commands that are useful for internal penetration tests and assumed breach exercises (red teaming).",
+      "language": "C",
+      "updated": "2026-04-25T05:10:15Z",
+      "topics": []
+    },
+    {
+      "name": "owasp-istg",
+      "url": "https://github.com/OWASP/owasp-istg",
+      "stars": 118,
+      "description": "The IoT Security Testing Guide (ISTG) provides a comprehensive methodology for penetration tests in the IoT field, offering flexibility to adapt innovations, and developments in the IoT market while still ensuring comparability of test results.",
+      "language": "Python",
+      "updated": "2026-04-15T21:29:14Z",
+      "topics": [
+        "assurance",
+        "checklist",
+        "compliancy-checklist",
+        "embedded-security",
+        "iotsecurity",
+        "istg",
+        "penetration-testing",
+        "security",
+        "security-testing",
+        "test-cases",
+        "test-lab",
+        "testing-framework"
+      ]
+    },
+    {
+      "name": "Kali-Linux",
+      "url": "https://github.com/aw-junaid/Kali-Linux",
+      "stars": 86,
+      "description": "A guide to using Kali Linux tools for web penetration testing, ethical hacking, forensics, and bug bounty. Covers setup, key tools, methodologies, and best practices. Optimized for security professionals.",
+      "language": null,
+      "updated": "2026-04-26T08:34:15Z",
+      "topics": [
+        "bugbounty",
+        "ethical-hacking",
+        "exploitation",
+        "forensics",
+        "hacking-tools",
+        "kali-linux",
+        "nmap",
+        "osint-tool",
+        "penetrationtesting",
+        "phishing",
+        "python3",
+        "social-engineering",
+        "ssh",
+        "ssl",
+        "wifi-hacking",
+        "wireshark"
+      ]
+    },
+    {
+      "name": "Web-Application-Penetration-Testing-Methodology",
+      "url": "https://github.com/gotr00t0day/Web-Application-Penetration-Testing-Methodology",
+      "stars": 53,
+      "description": "Web Application Penetration Testing Methodology",
+      "language": null,
+      "updated": "2026-04-09T19:21:32Z",
+      "topics": []
+    },
+    {
+      "name": "Privilege-Escalation",
+      "url": "https://github.com/Ignitetechnologies/Privilege-Escalation",
+      "stars": 3591,
+      "description": "This cheasheet is aimed at the CTF Players and Beginners to help them understand the fundamentals of Privilege Escalation with examples.",
+      "language": null,
+      "updated": "2026-04-29T14:52:58Z",
+      "topics": [
+        "cheatsheet",
+        "ctf",
+        "ctf-challenges",
+        "ctf-writeups",
+        "hack",
+        "hacking",
+        "oscp",
+        "oscp-journey",
+        "oscp-prep",
+        "privilege-escalation",
+        "vulnhub"
+      ]
+    },
+    {
+      "name": "Windows-Local-Privilege-Escalation-Cookbook",
+      "url": "https://github.com/nickvourd/Windows-Local-Privilege-Escalation-Cookbook",
+      "stars": 1311,
+      "description": "Windows Local Privilege Escalation Cookbook",
+      "language": "PowerShell",
+      "updated": "2026-04-28T13:45:59Z",
+      "topics": [
+        "administrator",
+        "administrator-privileges",
+        "cheatsheet",
+        "cmd",
+        "cookbook",
+        "eop",
+        "lab",
+        "lab-automation",
+        "local-administration",
+        "local-privilege-escalation",
+        "lpe",
+        "microsoft",
+        "misconfiguration",
+        "oscp",
+        "oscp-prep",
+        "osep",
+        "osep-prep",
+        "powershell",
+        "privilege-escalation",
+        "windows"
+      ]
+    },
+    {
+      "name": "Linux-Privilege-Escalation",
+      "url": "https://github.com/Ignitetechnologies/Linux-Privilege-Escalation",
+      "stars": 882,
+      "description": "This cheatsheet is aimed at the OSCP aspirants to help them understand the various methods of Escalating Privilege on Linux based Machines and CTFs with examples.",
+      "language": null,
+      "updated": "2026-04-22T21:23:23Z",
+      "topics": []
+    }
+  ],
+  "trending_techniques": [
+    {
+      "repo": "PWK-OSCP-Preparation-Roadmap",
+      "category": "privesc",
+      "technique": "privilege escalation",
+      "context": "[A GUIDE TO LINUX PRIVILEGE ESCALATION by Rashid Feroz](https://payatu.com/guide-linux-privilege-escalation/)"
+    },
+    {
+      "repo": "PWK-OSCP-Preparation-Roadmap",
+      "category": "privesc",
+      "technique": "privilege escalation",
+      "context": "[Windows Privilege Escalation Fundamentals](http://www.fuzzysecurity.com/tutorials/16.html)"
+    },
+    {
+      "repo": "PWK-OSCP-Preparation-Roadmap",
+      "category": "privesc",
+      "technique": "sudo",
+      "context": "[Abusing SUDO (Linux Privilege Escalation)](http://touhidshaikh.com/blog/?p=790)"
+    },
+    {
+      "repo": "PWK-OSCP-Preparation-Roadmap",
+      "category": "web",
+      "technique": "sql injection",
+      "context": "**3. SQL Injection (SQLi to RCE)**"
+    },
+    {
+      "repo": "PWK-OSCP-Preparation-Roadmap",
+      "category": "web",
+      "technique": "sql injection",
+      "context": "[Full SQL Injection Tutorial (MySQL)](https://www.exploit-db.com/papers/13045/)"
+    },
+    {
+      "repo": "PWK-OSCP-Preparation-Roadmap",
+      "category": "web",
+      "technique": "rce",
+      "context": "[DNS Hacking (Beginner to Advanced)](http://resources.infosecinstitute.com/dns-hacking/)"
+    },
+    {
+      "repo": "PWK-OSCP-Preparation-Roadmap",
+      "category": "web",
+      "technique": "rce",
+      "context": "**1. LFI(LFI to RCE)**"
+    },
+    {
+      "repo": "PWK-OSCP-Preparation-Roadmap",
+      "category": "web",
+      "technique": "lfi",
+      "context": "**1. LFI(LFI to RCE)**"
+    },
+    {
+      "repo": "PWK-OSCP-Preparation-Roadmap",
+      "category": "web",
+      "technique": "lfi",
+      "context": "[LFI Cheat Sheet](https://highon.coffee/blog/lfi-cheat-sheet/)"
+    },
+    {
+      "repo": "PWK-OSCP-Preparation-Roadmap",
+      "category": "web",
+      "technique": "rfi",
+      "context": "**2. RFI(RFI to RCE)**"
+    },
+    {
+      "repo": "PWK-OSCP-Preparation-Roadmap",
+      "category": "tools",
+      "technique": "nmap",
+      "context": "**1. NMAP 101 Port Scanning (TCP Connect Scan, UDP Scanning, Using NSE Scripts)**"
+    },
+    {
+      "repo": "PWK-OSCP-Preparation-Roadmap",
+      "category": "tools",
+      "technique": "nmap",
+      "context": "[Hacking Articles:NMAP](http://www.hackingarticles.in/category/nmap/)"
+    },
+    {
+      "repo": "PWK-OSCP-Preparation-Roadmap",
+      "category": "tools",
+      "technique": "metasploit",
+      "context": "**6. Metasploit**"
+    },
+    {
+      "repo": "PWK-OSCP-Preparation-Roadmap",
+      "category": "tools",
+      "technique": "metasploit",
+      "context": "[Metasploit Unleashed](https://www.offensive-security.com/metasploit-unleashed/)"
+    },
+    {
+      "repo": "oscp-cheatsheet",
+      "category": "privesc",
+      "technique": "privilege escalation",
+      "context": "- **07 Windows Privilege Escalation.md** \u2013 Techniques for escalating privileges on Windows systems."
+    },
+    {
+      "repo": "oscp-cheatsheet",
+      "category": "privesc",
+      "technique": "privilege escalation",
+      "context": "- **08 Linux Privilege Escalation.md** \u2013 Techniques for escalating privileges on Linux systems."
+    },
+    {
+      "repo": "oscp-cheatsheet",
+      "category": "web",
+      "technique": "rce",
+      "context": "n notes and artifacts related to Challenge Lab exercises used for hands-on practice and skill reinforcement."
+    },
+    {
+      "repo": "oscp-cheatsheet",
+      "category": "web",
+      "technique": "rce",
+      "context": "This cheatsheet is intended to be a dynamic and evolving resource. Contributions, suggestions, and corrections are welcome to enhance its accuracy and comprehensiven"
+    },
+    {
+      "repo": "ssh-default-banners",
+      "category": "tools",
+      "technique": "nmap",
+      "context": "nmap -p22 -sV --script ssh-os.nse <target>"
+    },
+    {
+      "repo": "ssh-default-banners",
+      "category": "tools",
+      "technique": "nmap",
+      "context": "nmap -p <port number> -sV --script ssh-os.nse <target>"
+    }
+  ],
+  "common_issues": [
+    {
+      "title": "[Python 3.7 compat] Properly handle Python Exceptions with __send_sync_pdu()",
+      "url": "https://github.com/easysnmp/easysnmp/pull/129",
+      "repo": "easysnmp",
+      "body": "This replaces PR #117, which is a bit messy and doesn't solve the bug's root cause; that PyObject_SetAttr\\*() clears the exception raised by __send_sync_pdu().\r\n\r\n@kamakazikamikaze : I know you haven'",
+      "reactions": 2,
+      "category": "general"
+    },
+    {
+      "title": "Scanning HACKTHEBOX one2punch seems to hang",
+      "url": "https://github.com/superkojiman/onetwopunch/issues/5",
+      "repo": "onetwopunch",
+      "body": "It seemed to scan fine when i was using it on the OSCP labs, but when i try to scan it on the \r\nhack the box labs it jut seems to hang.\r\n\r\n[+] Protocol : tcp\r\n[+] Interface: tun0\r\n[+] Nmap opts: -Sc -",
+      "reactions": 1,
+      "category": "general"
+    },
+    {
+      "title": "Full\u2011repo CodeRabbit review",
+      "url": "https://github.com/spiegelton/ROAST-OSCP-Cheatsheet-by-saisathvik1/pull/1",
+      "repo": "ROAST-OSCP-Cheatsheet-by-saisathvik1",
+      "body": "This pull request was opened automatically to enable a full-repository review by CodeRabbit.",
+      "reactions": 0,
+      "category": "general"
+    },
+    {
+      "title": "\u603b\u7ed3",
+      "url": "https://github.com/WDavid404/OSCP/issues/5",
+      "repo": "OSCP",
+      "body": "### OSCP-CheatSheet\nhttps://notchxor.github.io/oscp-notes/2-web/LFI-RFI/\nhttps://github.com/WDavid404/OSCP-CheatSheet\nhttps://github.com/saisathvik1/OSCP-Cheatsheet\n\n\n### tools\n- winPEAS: https://gith",
+      "reactions": 0,
+      "category": "general"
+    },
+    {
+      "title": "chore(ci): harden actions workflow configuration",
+      "url": "https://github.com/guan4tou2/guan4tou2.github.io/pull/30",
+      "repo": "guan4tou2.github.io",
+      "body": "## Summary\n- pin deploy workflow actions to immutable commit SHAs\n- switch CI Node matrix from 22/23 to LTS-only 20/22\n- pin biome setup version to 1.9.4 for reproducible CI\n\n## Validation\n- ruby YAML",
+      "reactions": 0,
+      "category": "general"
+    },
+    {
+      "title": "Best OSCP Certification Training Institute in India",
+      "url": "https://github.com/sikhasinghh534-sketch/securium-academy/issues/31",
+      "repo": "securium-academy",
+      "body": "Best OSCP Certification Training Institute in India\nIn today\u2019s rapidly evolving cybersecurity landscape, ethical hacking and penetration testing have become critical skills for IT professionals. Among",
+      "reactions": 0,
+      "category": "general"
+    },
+    {
+      "title": "feat: add oscp-coach skill; restore language-tutor",
+      "url": "https://github.com/xiongxianfei/ai-skills/pull/16",
+      "repo": "ai-skills",
+      "body": "## Summary\n\n- Adds `oscp-coach` \u2014 OSCP exam preparation coach with Socratic methodology\n- Restores `language-tutor` lost during the PR #14 rebase\n\n## oscp-coach\n\nOSCP exam preparation coach with a str",
+      "reactions": 0,
+      "category": "general"
+    },
+    {
+      "title": "Full\u2011repo CodeRabbit review",
+      "url": "https://github.com/spiegelton/ROAST-OSCP-Cheatsheet-by-saisathvik1/pull/1",
+      "repo": "ROAST-OSCP-Cheatsheet-by-saisathvik1",
+      "body": "This pull request was opened automatically to enable a full-repository review by CodeRabbit.",
+      "reactions": 0,
+      "category": "general"
+    },
+    {
+      "title": "[\u6bcf\u65e5\u4fe1\u606f\u6d41] 2026-04-08",
+      "url": "https://github.com/ruohong2018/ruohong2018.github.io/issues/1153",
+      "repo": "ruohong2018.github.io",
+      "body": "# \u6bcf\u65e5\u5b89\u5168\u8d44\u8baf\uff082026-04-08\uff09\n\n- Verne in GitHub\n  - [CLIProxyAPI \u628a Claude Code\u3001Gemini CLI\u3001Codex \u8ba2\u9605\u5305\u88c5\u6210\u7edf\u4e00 API \u7684\u5f00\u6e90\u795e\u5668](https://blog.einverne.info/post/2026/04/cliproxyapi-unified-ai-gateway-for-cli-subscriptions.",
+      "reactions": 0,
+      "category": "general"
+    },
+    {
+      "title": "[\u6bcf\u65e5\u4fe1\u606f\u6d41] 2026-04-08",
+      "url": "https://github.com/BruceFeIix/picker/issues/2366",
+      "repo": "picker",
+      "body": "# \u6bcf\u65e5\u5b89\u5168\u8d44\u8baf\uff082026-04-08\uff09\n\n- Zgao's blog\n  - [ ] [\u5185\u5b58\u53d6\u8bc1-\u6ca1\u6709debuginfo\u65f6\u5982\u4f55\u89e3\u51b3\u7b26\u53f7\u8868\u7684\u96be\u9898](https://zgao.top/%e5%86%85%e5%ad%98%e5%8f%96%e8%af%81-%e6%b2%a1%e6%9c%89debuginfo%e6%97%b6%e5%a6%82%e4%bd%95%e8%a7%a3%e5%86%b3",
+      "reactions": 0,
+      "category": "general"
+    },
+    {
+      "title": "[IMPROVEMENT] - Adding Organizations-related stars to the owner profile",
+      "url": "https://github.com/anuraghazra/github-readme-stats/issues/2325",
+      "repo": "github-readme-stats",
+      "body": "### Is your feature request related to a problem? Please describe.\n\nCurrently, github-readme-stats leverages shows only stars related to profile's repositories. In case I created an organization that ",
+      "reactions": 2,
+      "category": "general"
+    },
+    {
+      "title": "[Python 3.7 compat] Properly handle Python Exceptions with __send_sync_pdu()",
+      "url": "https://github.com/easysnmp/easysnmp/pull/129",
+      "repo": "easysnmp",
+      "body": "This replaces PR #117, which is a bit messy and doesn't solve the bug's root cause; that PyObject_SetAttr\\*() clears the exception raised by __send_sync_pdu().\r\n\r\n@kamakazikamikaze : I know you haven'",
+      "reactions": 2,
+      "category": "general"
+    },
+    {
+      "title": "\u603b\u7ed3",
+      "url": "https://github.com/WDavid404/OSCP/issues/5",
+      "repo": "OSCP",
+      "body": "### OSCP-CheatSheet\nhttps://notchxor.github.io/oscp-notes/2-web/LFI-RFI/\nhttps://github.com/WDavid404/OSCP-CheatSheet\nhttps://github.com/saisathvik1/OSCP-Cheatsheet\n\n\n### tools\n- winPEAS: https://gith",
+      "reactions": 0,
+      "category": "general"
+    },
+    {
+      "title": "Expand roadmap phases to 11-14, map resources to syllabus, fix PDF blank pages",
+      "url": "https://github.com/hotaro6754/OffSec-AI-Mentor/pull/28",
+      "repo": "OffSec-AI-Mentor",
+      "body": "Roadmap generation produced only 6 generic phases. PDF export rendered blank pages. Resources lacked explicit mapping to certification syllabus topics.\n\n## Changes\n\n### AI Prompt Enhancement (`server-",
+      "reactions": 0,
+      "category": "general"
+    },
+    {
+      "title": "Suggestion: -oY -oJ will fail if parent directory of the new file did not exist",
+      "url": "https://github.com/cddmp/enum4linux-ng/issues/63",
+      "repo": "enum4linux-ng",
+      "body": "Hi! Just a quick one here.\n\nI was using it to scan a machine today. But since I renamed the parent directory (from scans to scans_v1), the .json output file is not created. So I will have to run enum4",
+      "reactions": 0,
+      "category": "general"
+    },
+    {
+      "title": "nixos/cryptpad: init, cryptpad: init at 2024.6.0",
+      "url": "https://github.com/NixOS/nixpkgs/pull/251687",
+      "repo": "nixpkgs",
+      "body": "## Things done\r\n\r\ncryptpad removed its dependency on bower and can be sanely packaged again.\r\nAdd the package and module back.\r\nThe old module almost didn't do anything and there was no test so this r",
+      "reactions": 6,
+      "category": "general"
+    },
+    {
+      "title": "2017 Rating",
+      "url": "https://github.com/ctftime/ctftime.org/issues/40",
+      "repo": "ctftime.org",
+      "body": "Hi,\r\nnow, when people say that voting-based rating schema does not work - let's discuss how can we fix it.\r\n\r\nShould we use ELO-like system? Something else?\r\n",
+      "reactions": 6,
+      "category": "general"
+    },
+    {
+      "title": "12-Month Cybersecurity Career Roadmap",
+      "url": "https://github.com/koachsahab/Cybersecurity-Career-Roadmap/issues/1",
+      "repo": "Cybersecurity-Career-Roadmap",
+      "body": "**(Courses, Books & Practice Checklist)**\n\n| Month | Focus Area | Courses | Books | Practice Goals |\n|-------|------------|---------|-------|----------------|\n| **1** | Networking & OS Basics | Cisco ",
+      "reactions": 2,
+      "category": "general"
+    },
+    {
+      "title": "\u7ea2\u961f\u548c\u84dd\u961f\u8d44\u6599\u96c6\u9526",
+      "url": "https://github.com/renzu0/Red-team/issues/1",
+      "repo": "Red-team",
+      "body": "> \u9879\u76ee\u7b80\u4ecb\r\n> \u4e00\u4e2a Red Team \u653b\u51fb\u7684\u751f\u547d\u5468\u671f\uff0c\u6574\u4e2a\u751f\u547d\u5468\u671f\u5305\u62ec\uff1a\r\n> \u4fe1\u606f\u6536\u96c6\u3001\u653b\u51fb\u5c1d\u8bd5\u83b7\u5f97\u6743\u9650\u3001\u6301\u4e45\u6027\u63a7\u5236\u3001\u6743\u9650\u63d0\u5347\u3001\u7f51\u7edc\u4fe1\u606f\u6536\u96c6\u3001\u6a2a\u5411\u79fb\u52a8\u3001\u6570\u636e\u5206\u6790\uff08\u5728\u8fd9\u4e2a\u57fa\u7840\u4e0a\u518d\u505a\u6301\u4e45\u5316\u63a7\u5236\uff09\u3001\u5728\u6240\u6709\u653b\u51fb\u7ed3\u675f\u4e4b\u540e\u6e05\u7406\u5e76\u9000\u51fa\u6218\u573a\u3002\r\n> \r\n> \u548c\u4e00\u4e2a\u8457\u540d\u7684\u84dd\u961f\u9879\u76ee\uff1ahttps://github.com/meitar/awesome-cybersecurity-blueteam\r\n> \r\n> ",
+      "reactions": 2,
+      "category": "general"
+    },
+    {
+      "title": "Error \"Unknown error (0x80092013)\" on push/pull to Enterprise instance",
+      "url": "https://github.com/desktop/desktop/issues/3260",
+      "repo": "desktop",
+      "body": "<!--\r\n\r\nHave you read GitHub Desktop's Code of Conduct? By filing an Issue, you are\r\nexpected to comply with it, including treating everyone with respect:\r\n\r\nhttps://github.com/desktop/desktop/blob/ma",
+      "reactions": 2,
+      "category": "general"
+    },
+    {
+      "title": "Complete Linux course: add 5 missing Module 4 and Appendix files",
+      "url": "https://github.com/mntumba/linux-learning/pull/1",
+      "repo": "linux-learning",
+      "body": "Five files from the original course outline were not created in the previous session. This PR adds them to complete the full 26-file course.\n\n## Added files\n\n**Module 4 \u2014 Hacker/Penetration Testing**\n",
+      "reactions": 0,
+      "category": "general"
+    },
+    {
+      "title": "Enhance KaliGuru persona and roadmap resources",
+      "url": "https://github.com/hotaro6754/OffSec-AI-Mentor/pull/70",
+      "repo": "OffSec-AI-Mentor",
+      "body": "This change enhances the 'KaliGuru' chatbot persona and the roadmap generation logic. \n\nKey improvements:\n- Incorporates extensive resources (books, tools, platforms) from the Hamed233/Cybersecurity-M",
+      "reactions": 0,
+      "category": "general"
+    },
+    {
+      "title": "[\u6bcf\u65e5\u4fe1\u606f\u6d41] 2025-04-25",
+      "url": "https://github.com/ruohong2018/ruohong2018.github.io/issues/803",
+      "repo": "ruohong2018.github.io",
+      "body": "# \u6bcf\u65e5\u5b89\u5168\u8d44\u8baf\uff082025-04-25\uff09\n\n- Verne in GitHub\n  - [\u4f7f\u7528 Claw Cloud \u514d\u8d39\u90e8\u7f72 Gemini \u53cd\u5411\u4ee3\u7406\u6559\u7a0b](https://blog.einverne.info/post/2025/04/claw-cloud-run-gemini-proxy.html)\n- Recent Commits to cve:main\n  - [Update Thu Ap",
+      "reactions": 0,
+      "category": "general"
+    },
+    {
+      "title": "[\u6bcf\u65e5\u4fe1\u606f\u6d41] 2025-04-25",
+      "url": "https://github.com/BruceFeIix/picker/issues/1666",
+      "repo": "picker",
+      "body": "# \u6bcf\u65e5\u5b89\u5168\u8d44\u8baf\uff082025-04-25\uff09\n\n- SecWiki News\n  - [ ] [SecWiki News 2025-04-24 Review](http://www.sec-wiki.com/?2025-04-24)\n- \u5947\u5b89\u4fe1\u653b\u9632\u793e\u533a\n  - [ ] [\u57fa\u4e8e\u5d4c\u5165\u6270\u52a8\u7684\u5927\u6a21\u578b\u767d\u76d2\u8d8a\u72f1\u653b\u51fb](https://forum.butian.net/share/4284)\n- Taxodium\n",
+      "reactions": 0,
+      "category": "general"
+    },
+    {
+      "title": "[\u6bcf\u65e5\u4fe1\u606f\u6d41] 2025-04-25",
+      "url": "https://github.com/MM0x02/RSS-Push/issues/119",
+      "repo": "RSS-Push",
+      "body": "# \u6bcf\u65e5\u5b89\u5168\u8d44\u8baf\uff082025-04-25\uff09\n\n- SecWiki News\n  - [ ] [SecWiki News 2025-04-24 Review](http://www.sec-wiki.com/?2025-04-24)\n- Verne in GitHub\n  - [ ] [\u4f7f\u7528 Claw Cloud \u514d\u8d39\u90e8\u7f72 Gemini \u53cd\u5411\u4ee3\u7406\u6559\u7a0b](https://blog.einverne.in",
+      "reactions": 0,
+      "category": "general"
+    }
+  ],
+  "cve_exploits": [
+    {
+      "cve": "CVE-2019-9193",
+      "repo": "CVE-2019-9193",
+      "url": "https://github.com/b4keSn4ke/CVE-2019-9193",
+      "stars": 20,
+      "language": "Python"
+    },
+    {
+      "cve": "CVE-2019-9193",
+      "repo": "CVE-2019-9193",
+      "url": "https://github.com/geniuszly/CVE-2019-9193",
+      "stars": 4,
+      "language": "Python"
+    },
+    {
+      "cve": "CVE-2019-9193",
+      "repo": "cve-2019-9193",
+      "url": "https://github.com/wkjung0624/cve-2019-9193",
+      "stars": 3,
+      "language": "Python"
+    },
+    {
+      "cve": "CVE-2019-0604",
+      "repo": "CVE-2019-0604",
+      "url": "https://github.com/linhlhq/CVE-2019-0604",
+      "stars": 133,
+      "language": "C#"
+    },
+    {
+      "cve": "CVE-2019-0604",
+      "repo": "CVE-2019-0604",
+      "url": "https://github.com/k8gege/CVE-2019-0604",
+      "stars": 102,
+      "language": "Python"
+    },
+    {
+      "cve": "CVE-2019-0604",
+      "repo": "Sparty-2.0",
+      "url": "https://github.com/MayankPandey01/Sparty-2.0",
+      "stars": 57,
+      "language": "Python"
+    },
+    {
+      "cve": "CVE-2016-5195",
+      "repo": "CVE-2016-5195",
+      "url": "https://github.com/timwr/CVE-2016-5195",
+      "stars": 1003,
+      "language": "C"
+    },
+    {
+      "cve": "CVE-2016-5195",
+      "repo": "dirtycow",
+      "url": "https://github.com/firefart/dirtycow",
+      "stars": 928,
+      "language": "C"
+    },
+    {
+      "cve": "CVE-2016-5195",
+      "repo": "dirtycow-vdso",
+      "url": "https://github.com/scumjr/dirtycow-vdso",
+      "stars": 510,
+      "language": "C"
+    },
+    {
+      "cve": "CVE-2021-4034",
+      "repo": "CVE-2021-4034",
+      "url": "https://github.com/berdav/CVE-2021-4034",
+      "stars": 2043,
+      "language": "C"
+    },
+    {
+      "cve": "CVE-2021-4034",
+      "repo": "PwnKit",
+      "url": "https://github.com/ly4k/PwnKit",
+      "stars": 1300,
+      "language": "C"
+    },
+    {
+      "cve": "CVE-2021-4034",
+      "repo": "CVE-2021-4034",
+      "url": "https://github.com/arthepsy/CVE-2021-4034",
+      "stars": 1149,
+      "language": "C"
+    },
+    {
+      "cve": "CVE-2021-22555",
+      "repo": "CVE-2021-22555-PipeVersion",
+      "url": "https://github.com/veritas501/CVE-2021-22555-PipeVersion",
+      "stars": 39,
+      "language": "C"
+    },
+    {
+      "cve": "CVE-2021-22555",
+      "repo": "CVE-2021-22555-Exploit",
+      "url": "https://github.com/xyjl-ly/CVE-2021-22555-Exploit",
+      "stars": 13,
+      "language": null
+    },
+    {
+      "cve": "CVE-2021-22555",
+      "repo": "container-cve-2021-22555",
+      "url": "https://github.com/cgwalters/container-cve-2021-22555",
+      "stars": 4,
+      "language": "C"
+    }
+  ],
+  "tool_updates": [
+    {
+      "tool": "linPEAS/winPEAS",
+      "repo": "carlospolop/PEASS-ng",
+      "url": "https://github.com/peass-ng/PEASS-ng",
+      "stars": 19763,
+      "last_updated_days_ago": 0,
+      "description": "PEASS - Privilege Escalation Awesome Scripts SUITE (with colors)"
+    },
+    {
+      "tool": "Chisel tunneling",
+      "repo": "jpillora/chisel",
+      "url": "https://github.com/jpillora/chisel",
+      "stars": 15947,
+      "last_updated_days_ago": 0,
+      "description": "A fast TCP/UDP tunnel over HTTP"
+    },
+    {
+      "tool": "Payloads reference",
+      "repo": "swisskyrepo/PayloadsAllTheThings",
+      "url": "https://github.com/swisskyrepo/PayloadsAllTheThings",
+      "stars": 77373,
+      "last_updated_days_ago": 0,
+      "description": "A list of useful payloads and bypass for Web Application Security and Pentest/CTF"
+    },
+    {
+      "tool": "WordLists",
+      "repo": "danielmiessler/SecLists",
+      "url": "https://github.com/danielmiessler/SecLists",
+      "stars": 70592,
+      "last_updated_days_ago": 0,
+      "description": "SecLists is the security tester's companion. It's a collection of multiple types of lists used during security assessments, collected in one place. List types include usernames, passwords, URLs, sensitive data patterns, fuzzing payloads, web shells, and many more."
+    },
+    {
+      "tool": "PowerShell exploits",
+      "repo": "PowerShellMafia/PowerSploit",
+      "url": "https://github.com/PowerShellMafia/PowerSploit",
+      "stars": 12969,
+      "last_updated_days_ago": 0,
+      "description": "PowerSploit - A PowerShell Post-Exploitation Framework"
+    }
+  ],
+  "methodology_improvements": []
+}

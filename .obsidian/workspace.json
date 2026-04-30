@@ -1,0 +1,222 @@
+{
+  "main": {
+    "id": "414512efdcbe86ca",
+    "type": "split",
+    "children": [
+      {
+        "id": "da5df4b199d2a57f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "875d0b5744230f62",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "OSCP-PEN200-Vault/08-Exam-Strategy/Common-OSCP-Mistakes.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Common-OSCP-Mistakes"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "b0d67dcb9d807c05",
+    "type": "split",
+    "children": [
+      {
+        "id": "f69cf6a253658ca3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c39f4bcacdc3ca19",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "30dd41faf297700b",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "17219d84d84452ca",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "f5a3d4c9d7c307ba",
+    "type": "split",
+    "children": [
+      {
+        "id": "860030cc77dc0173",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8354850b4e70f486",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "b01ab0405540b79d",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "2bf1e66268a734ae",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "548193e788152a2a",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "151faf0f8c7074d3",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "875d0b5744230f62",
+  "lastOpenFiles": [
+    "CONTRIBUTING.md",
+    "CONTRIBUTING.md.tmp.1118576.1777579178559",
+    "LICENSE",
+    "LICENSE.tmp.1118576.1777579162521",
+    "README.md.tmp.1118576.1777579125095",
+    "README.md.tmp.1118576.1777579122969",
+    "SYSTEM-STATUS.md.tmp.1118576.1777579116522",
+    "OSCP-PEN200-Vault/00-Dashboard.md",
+    "SYSTEM-SUMMARY.md",
+    "SYSTEM-STATUS.md",
+    "SCRAPING-SUMMARY.md",
+    "reddit_findings.md",
+    "OSCP-PEN200-Vault/07-Resources/Useful-Links.md",
+    "README.md",
+    "OSCP-PEN200-Vault/13-Latest-Research/GitHub-Research-Findings.md",
+    "github_scraping_findings.md",
+    "OSCP-PEN200-Vault/09-Exam-Day/Exam-Day-Checklist.md",
+    "OSCP-PEN200-Vault/11-Progress-Tracking/Personal-Weakness-Analyzer.md",
+    "OSCP-PEN200-Vault/12-Mock-Exams/Mock-Exam-Scenarios.md",
+    "OSCP-PEN200-Vault/07-Resources/OSCP-Machine-List.md",
+    "OSCP-PEN200-Vault/12-Mock-Exams",
+    "OSCP-PEN200-Vault/11-Progress-Tracking",
+    "OSCP-PEN200-Vault/10-Decision-Trees/Vulnerability-Decision-Tree.md",
+    "OSCP-PEN200-Vault/10-Decision-Trees/Vulnerability-Decision-Tree.md.tmp.1118576.1777576918839",
+    "OSCP-PEN200-Vault/10-Decision-Trees",
+    "OSCP-PEN200-Vault/02-Linux/Post-Exploitation-Deep-Dive.md",
+    "OSCP-PEN200-Vault/08-Exam-Strategy/Real-Machine-Scenarios.md",
+    "OSCP-PEN200-Vault/08-Exam-Strategy/Exam-Report-Template.md",
+    "OSCP-PEN200-Vault/08-Exam-Strategy/Common-OSCP-Mistakes.md",
+    "OSCP-PEN200-Vault/06-Buffer-Overflow/BOF-x86-Windows.md",
+    "OSCP-PEN200-Vault/05-Tools/Wordlists-Reference.md",
+    "OSCP-PEN200-Vault/05-Tools/Reverse-Shells.md",
+    "OSCP-PEN200-Vault/05-Tools/Pivoting-Tunneling.md",
+    "OSCP-PEN200-Vault/05-Tools/Nmap-Cheatsheet.md",
+    "OSCP-PEN200-Vault/05-Tools/MSFvenom-Payloads.md",
+    "OSCP-PEN200-Vault/04-Web/File-Upload-Bypass.md"
+  ]
+}

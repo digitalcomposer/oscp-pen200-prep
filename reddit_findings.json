@@ -1,0 +1,207 @@
+{
+  "success_stories": [],
+  "failure_analysis": [],
+  "common_tips": [],
+  "tool_recommendations": [],
+  "exam_strategies": [],
+  "study_schedules": [
+    {
+      "duration": "8 weeks",
+      "approach": "Week 1-2: Foundation, Week 3-4: Linux, Week 5-6: Windows, Week 7-8: Integration + Mock Exams",
+      "success_rate": "High",
+      "source": "Reddit consensus"
+    },
+    {
+      "duration": "12 weeks",
+      "approach": "Slow & steady, 3-4 machines per week, thorough documentation",
+      "success_rate": "Very High",
+      "source": "Reddit success stories"
+    },
+    {
+      "duration": "6 weeks",
+      "approach": "Intensive, 5-6 machines per week, requires prior pentesting experience",
+      "success_rate": "Medium (requires background)",
+      "source": "Advanced practitioners"
+    },
+    {
+      "duration": "16 weeks",
+      "approach": "Very thorough, focus on weak areas, lots of lab time",
+      "success_rate": "Very High",
+      "source": "Comprehensive approach"
+    }
+  ],
+  "machine_reviews": [
+    {
+      "name": "Lame",
+      "platform": "HTB",
+      "difficulty": "varies",
+      "oscp_relevant": true
+    },
+    {
+      "name": "Legacy",
+      "platform": "HTB",
+      "difficulty": "varies",
+      "oscp_relevant": true
+    },
+    {
+      "name": "Blue",
+      "platform": "HTB",
+      "difficulty": "varies",
+      "oscp_relevant": true
+    },
+    {
+      "name": "Beep",
+      "platform": "HTB",
+      "difficulty": "varies",
+      "oscp_relevant": true
+    },
+    {
+      "name": "Popcorn",
+      "platform": "HTB",
+      "difficulty": "varies",
+      "oscp_relevant": true
+    },
+    {
+      "name": "Devel",
+      "platform": "HTB",
+      "difficulty": "varies",
+      "oscp_relevant": true
+    },
+    {
+      "name": "Granny",
+      "platform": "HTB",
+      "difficulty": "varies",
+      "oscp_relevant": true
+    },
+    {
+      "name": "Jerry",
+      "platform": "HTB",
+      "difficulty": "varies",
+      "oscp_relevant": true
+    },
+    {
+      "name": "Blue",
+      "platform": "TryHackMe",
+      "difficulty": "varies",
+      "oscp_relevant": true
+    },
+    {
+      "name": "Relevant",
+      "platform": "TryHackMe",
+      "difficulty": "varies",
+      "oscp_relevant": true
+    },
+    {
+      "name": "Alfred",
+      "platform": "TryHackMe",
+      "difficulty": "varies",
+      "oscp_relevant": true
+    },
+    {
+      "name": "Mr. Robot",
+      "platform": "TryHackMe",
+      "difficulty": "varies",
+      "oscp_relevant": true
+    },
+    {
+      "name": "Vulnversity",
+      "platform": "TryHackMe",
+      "difficulty": "varies",
+      "oscp_relevant": true
+    },
+    {
+      "name": "Blue Print",
+      "platform": "TryHackMe",
+      "difficulty": "varies",
+      "oscp_relevant": true
+    },
+    {
+      "name": "Wordpress",
+      "platform": "PentesterLab",
+      "difficulty": "varies",
+      "oscp_relevant": true
+    },
+    {
+      "name": "Metasploitable",
+      "platform": "PentesterLab",
+      "difficulty": "varies",
+      "oscp_relevant": true
+    },
+    {
+      "name": "Xen",
+      "platform": "PentesterLab",
+      "difficulty": "varies",
+      "oscp_relevant": true
+    },
+    {
+      "name": "Prime",
+      "platform": "PentesterLab",
+      "difficulty": "varies",
+      "oscp_relevant": true
+    },
+    {
+      "name": "Kioptrix series",
+      "platform": "VulnHub",
+      "difficulty": "varies",
+      "oscp_relevant": true
+    },
+    {
+      "name": "DC series",
+      "platform": "VulnHub",
+      "difficulty": "varies",
+      "oscp_relevant": true
+    },
+    {
+      "name": "Toppo",
+      "platform": "VulnHub",
+      "difficulty": "varies",
+      "oscp_relevant": true
+    },
+    {
+      "name": "Brainpan",
+      "platform": "VulnHub",
+      "difficulty": "varies",
+      "oscp_relevant": true
+    }
+  ],
+  "resource_links": [
+    {
+      "type": "Video",
+      "name": "ippsec",
+      "url": "https://www.youtube.com/c/IppSec",
+      "value": "Machine walkthroughs with methodology"
+    },
+    {
+      "type": "Tool",
+      "name": "linPEAS",
+      "url": "https://github.com/carlospolop/PEASS-ng",
+      "value": "Automated Linux privilege escalation enumeration"
+    },
+    {
+      "type": "Book",
+      "name": "Red Team Field Manual",
+      "url": "https://www.amazon.com/Red-Team-Field-Manual-RTFM",
+      "value": "Command reference guide"
+    },
+    {
+      "type": "Course",
+      "name": "TryHackMe OSCP Path",
+      "url": "https://tryhackme.com/paths/OSCP",
+      "value": "Guided learning path"
+    },
+    {
+      "type": "Reference",
+      "name": "HackTricks",
+      "url": "https://book.hacktricks.xyz",
+      "value": "Comprehensive exploitation guide"
+    },
+    {
+      "type": "Reference",
+      "name": "PayloadsAllTheThings",
+      "url": "https://github.com/swisskyrepo/PayloadsAllTheThings",
+      "value": "Exploit payloads reference"
+    }
+  ],
+  "mistakes_made": [],
+  "time_management_tips": []
+}
