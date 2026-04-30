@@ -2,33 +2,51 @@
 
 **The Ultimate All-in-One OSCP Study & Reference Platform**
 
-## 🗺️ **[>> PROFESSIONAL PENETRATION TESTING CYBER KILL CHAIN <<](https://htmlpreview.github.io/?https://github.com/digitalcomposer/oscp-pen200-prep/blob/main/professional-pentest-kill-chain.html)**
+## 🗺️ **PROFESSIONAL PENETRATION TESTING CYBER KILL CHAIN**
 
-**Interactive framework for real-world penetration testing**
-- 7 main phases: Reconnaissance → Lateral Movement
-- 30+ attack nodes covering all engagement types
-- Multi-vector attacks (web, network, social, cloud)
-- Risk ratings and detailed techniques per node
-- Complete methodology from initial access to covering tracks
+### 📖 **[>> In Obsidian Vault <<](OSCP-PEN200-Vault/01-Methodology/Professional-Pentest-Kill-Chain.md)**
+**Best Experience - View with Mermaid diagrams in Obsidian**
+- 8 complete phases with visual flowcharts
+- Color-coded attack paths and decision trees
+- Alternative attack scenarios (Web-based, AD compromise)
+- Phase-by-phase checklists and timelines
+- Cross-linked to all related notes
+
+### 🌐 **[>> Interactive HTML Version <<](https://htmlpreview.github.io/?https://github.com/digitalcomposer/oscp-pen200-prep/blob/main/professional-pentest-kill-chain.html)**
+**Browser-based visualization with D3.js**
+- 30+ interactive nodes covering all attack vectors
+- Click nodes for commands, tools, risk ratings
+- Drag-and-drop node positioning
+- Works offline - download and open locally
 
 ---
 
 ## 📦 What You Get
 
-### ✅ Interactive Professional Penetration Testing Kill Chain
-- **7 main phases** - Complete attack methodology
-- **30+ attack nodes** covering real-world engagement scenarios
-- **Multi-vector attacks** - Web, Network, Social Engineering, Cloud
-- **Click for details** - Commands, tools, risk ratings, techniques
-- **Works offline** - Download & open in any browser
-- **[>>> LAUNCH KILL CHAIN <<<](https://htmlpreview.github.io/?https://github.com/digitalcomposer/oscp-pen200-prep/blob/main/professional-pentest-kill-chain.html)**
+### ✅ Professional Penetration Testing Cyber Kill Chain (2 Versions)
+
+#### 📖 Obsidian Version (Recommended)
+- **8 phases** with Mermaid diagrams
+- **Visual attack flows** with color-coded paths
+- **Alternative scenarios** (Web-based, AD compromise)
+- **Decision trees** and attack checklists
+- **Best viewed in Obsidian** with graph visualization
+- **[>>> OPEN IN VAULT <<<](OSCP-PEN200-Vault/01-Methodology/Professional-Pentest-Kill-Chain.md)**
+
+#### 🌐 Interactive HTML Version
+- **30+ nodes** covering all attack vectors
+- **D3.js visualization** with physics simulation
+- **Click nodes** for commands, tools, risk levels
+- **Works offline** - pure HTML, no dependencies
+- **[>>> LAUNCH INTERACTIVE MAP <<<](https://htmlpreview.github.io/?https://github.com/digitalcomposer/oscp-pen200-prep/blob/main/professional-pentest-kill-chain.html)**
 
 ### ✅ Phase 1: Obsidian Vault (Complete!)
-- **31 beautifully formatted markdown notes**
-- **Cross-linked wiki structure**
-- **Mermaid diagrams & flowcharts**
+- **32 beautifully formatted markdown notes**
+- **Cross-linked wiki structure** with graph visualization
+- **Mermaid diagrams & flowcharts** throughout
 - **Copy-paste ready commands**
 - **Offline-ready**: Works completely offline after initial setup
+- **Includes Professional Pentest Kill Chain** with 8-phase attack methodology
 
 ### ✅ Phase 2: Python Research Scrapers
 - **GitHub harvester** - Tracks new OSCP repos, CVEs, tools (weekly)
