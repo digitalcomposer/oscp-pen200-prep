@@ -2,26 +2,35 @@
 
 **The Ultimate All-in-One OSCP Study & Reference Platform**
 
-## 🗺️ **[>> INTERACTIVE CYBER KILL CHAIN MAP <<](https://cdn.jsdelivr.net/gh/digitalcomposer/oscp-pen200-prep@main/cyber-kill-chain-interactive.html)**
+## 🗺️ **INTERACTIVE CYBER KILL CHAINS**
 
-**Click above to launch the interactive attack flow visualization!**
-- 40+ nodes covering all exploitation vectors
-- Click nodes for commands, tools, and timing
-- Visual decision trees for exam success
-- Full phase breakdown (Recon → Proof)
-- ✅ Works in browser (no installation needed)
+### [>> PROFESSIONAL PENETRATION TESTING KILL CHAIN <<](https://cdn.jsdelivr.net/gh/digitalcomposer/oscp-pen200-prep@main/professional-pentest-kill-chain.html)
+**General-purpose framework for real-world penetration testing**
+- 7 main phases: Reconnaissance → Lateral Movement
+- 30+ attack nodes covering all engagement types
+- Multi-vector attacks (web, network, social, cloud)
+- Risk ratings and detailed techniques per node
+- Professional methodology for legitimate assessments
+
+### [>> OSCP EXAM CYBER KILL CHAIN <<](https://cdn.jsdelivr.net/gh/digitalcomposer/oscp-pen200-prep@main/cyber-kill-chain-interactive.html)
+**OSCP PEN-200 specific attack flow optimization**
+- 40+ nodes focused on exam machine exploitation
+- Timing budgets and phase breakdowns
+- Decision trees for preventing common failures
+- Command examples with copy-to-clipboard
+- 50% enumeration rule enforcement
 
 ---
 
 ## 📦 What You Get
 
-### ✅ Interactive Cyber Kill Chain Map
-- **40+ nodes** covering complete attack methodology
-- **Visual attack flow** with all exploitation vectors
-- **Click for details** - Commands, tools, timing, difficulty
-- **Decision trees** - Prevent common mistakes (90min rule, screenshots)
-- **Works offline** - Download & open locally
-- **[>>> LAUNCH MAP NOW <<<](https://cdn.jsdelivr.net/gh/digitalcomposer/oscp-pen200-prep@main/cyber-kill-chain-interactive.html)**
+### ✅ Interactive Cyber Kill Chain Maps (2 Versions)
+- **Professional Pentest Version** - 7 phases, 30+ nodes for real-world engagements
+- **OSCP Exam Version** - 40+ nodes optimized for certification exam
+- **Visual attack flows** with multiple exploitation paths
+- **Click for details** - Commands, tools, risk ratings, techniques
+- **Works offline** - Download & open in any browser
+- **[>>> PROFESSIONAL KILL CHAIN <<<](https://cdn.jsdelivr.net/gh/digitalcomposer/oscp-pen200-prep@main/professional-pentest-kill-chain.html)** | **[>>> OSCP KILL CHAIN <<<](https://cdn.jsdelivr.net/gh/digitalcomposer/oscp-pen200-prep@main/cyber-kill-chain-interactive.html)**
 
 ### ✅ Phase 1: Obsidian Vault (Complete!)
 - **31 beautifully formatted markdown notes**
