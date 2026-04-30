@@ -2,9 +2,25 @@
 
 **The Ultimate All-in-One OSCP Study & Reference Platform**
 
+## 🗺️ **[>> INTERACTIVE CYBER KILL CHAIN MAP <<](cyber-kill-chain-interactive.html)**
+
+**Click above to launch the interactive attack flow visualization!**
+- 40+ nodes covering all exploitation vectors
+- Click nodes for commands, tools, and timing
+- Visual decision trees for exam success
+- Full phase breakdown (Recon → Proof)
+
 ---
 
 ## 📦 What You Get
+
+### ✅ Interactive Cyber Kill Chain Map
+- **40+ nodes** covering complete attack methodology
+- **Visual attack flow** with all exploitation vectors
+- **Click for details** - Commands, tools, timing, difficulty
+- **Decision trees** - Prevent common mistakes (90min rule, screenshots)
+- **Works offline** - Open in any browser
+- **[>>> LAUNCH MAP <<<](cyber-kill-chain-interactive.html)**
 
 ### ✅ Phase 1: Obsidian Vault (Complete!)
 - **31 beautifully formatted markdown notes**
