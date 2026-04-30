@@ -247,7 +247,7 @@ http://localhost:8000/index.html
 **Everything works offline after setup:**
 
 1. ✅ Obsidian vault (all markdown files local)
-2. ✅ HTML dashboard (no external resources)
+2. ✅ Python research scrapers (automated updates)
 3. ✅ All commands and payloads (hard-coded)
 4. ❌ Scraper (requires internet, but runs once)
 

@@ -206,7 +206,6 @@ oscpmaster/
 ├── setup.sh ✅ (vault creation script)
 ├── README.md ✅ (8-week study plan)
 ├── SYSTEM-SUMMARY.md ✅ (system overview)
-├── index.html ✅ (interactive dashboard)
 ├── requirements.txt ✅ (Python dependencies)
 ├── scraper.py ✅ (initial web scraper)
 ├── advanced_scraper.py ✅ (GitHub harvester)
